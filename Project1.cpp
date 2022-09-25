@@ -139,7 +139,7 @@ int main() {
         return 1;
     // Number of darts thrown
     std::cin >> nDarts;
-    if (nDarts > 10)
+    if (nDarts <= 10)
         for (int32_t i = 0; i < nDarts; i++) {
             std::cin >> dart;
             for (int32_t k = 0; k < nPolygon; k++) {
