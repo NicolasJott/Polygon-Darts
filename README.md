@@ -12,16 +12,16 @@ The polygon can only be hit once to contribute to the score. If the polygon is h
 7. The score is then calculated by the area of the dartboard divided by the area of the polygon hit.
 
 # Example 1
-Input
-(10/1,10/1)
-2
-3 (0/1,0/1) (3/1,0/1) (2/1,1/1)
-4 (5/1,1/1) (8/1,4/1) (5/1,7/1) (2/1,4/1)
-1
-(4/1,9/2)
+Input\
+(10/1,10/1)\
+2\
+3 (0/1,0/1) (3/1,0/1) (2/1,1/1)\
+4 (5/1,1/1) (8/1,4/1) (5/1,7/1) (2/1,4/1)\
+1\
+(4/1,9/2)\
 
-Output
-Score: 50 / 9
+Output\
+Score: 50 / 9\
 
 # Example 2
 Input
@@ -59,5 +59,5 @@ Score: 200 / 3
 Output
 Score: 650 / 9
 
-**Note here that all three dart hit a polygon but dart (2/1,1/3) and (5/1,4/1) hit the same polygon therefore only dart (2/1,1/3) contributes to the score.
+[^1]: Note here that all three dart hit a polygon but dart (2/1,1/3) and (5/1,4/1) hit the same polygon therefore only dart (2/1,1/3) contributes to the score.
 
