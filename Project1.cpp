@@ -117,58 +117,58 @@ int main() {
             dart,
             polygons[100][20];
     bool
-        ifDartDuplicate[10][100];
+        dartHits[10][100];
 
     //input
     std::cin >> board;
-    boardArea = board.getX() * board.getY();// Used to calculate the area of the dart board
+    boardArea = board.getX() * board.getY();									// Used to calculate the area of the dart board
     std::cin >> nPolygon;
-    if (nPolygon > 0 && nPolygon <= 100) {
+    if (nPolygon > 0 && nPolygon <= 100) {									// If statement makes sure the input is in the correct range. Must be 1-100.
         for (int i = 0; i < nPolygon; i++) {
             std::cin >> nVerticies[i];
-            if (nVerticies[i] >= 3 && nVerticies[i] <= 20) {
+            if (nVerticies[i] >= 3 && nVerticies[i] <= 20) {							// If statement makes sure the input is in the correct range. Must be 3-20.
                 for (int32_t k = 0; k < nVerticies[i]; k++) {
                     std::cin >> polygons[i][k];
                 }
            } else {
                 std::cout << "You have entered an invalid number of Verticies." << std::endl;
-            	 return 1;
+            	 return 1;											// Exits program if invalid number of verticies
             	 }
-        } 
+        }
     } else {
         std::cout << "You have entered an invalid number of Polyogons." << std::endl;
-        return 1;
+        return 1;												// Exits program if invalid number of polygons
         }
-        
+
     // Number of darts thrown
     std::cin >> nDarts;
     if (nDarts <= 10) {
         for (int32_t i = 0; i < nDarts; i++) {
             std::cin >> dart;
             for (int32_t k = 0; k < nPolygon; k++) {
-                ifDartDuplicate[i][k] = isInsidePolygon(dart, board, polygons, nVerticies[k], k);
+                dartHits[i][k] = isInsidePolygon(dart, board, polygons, nVerticies[k], k);
             }
         }
 
         for (int32_t i = 0; i < nDarts; i++) {
-            for (int32_t k = 0; k < sizeof(ifDartDuplicate[i]); k++) {
+            for (int32_t k = 0; k < sizeof(dartHits[i]); k++) {
                 int32_t j = i + 1;
                 while ( j <  nDarts) {
-                    if (ifDartDuplicate[i][k] == ifDartDuplicate[j][k]) {
-                        ifDartDuplicate[i][k] = false;
+                    if (dartHits[i][k] == dartHits[j][k]) {
+                        dartHits[i][k] = false;
                     }
                     j++;
                 }
-                if (ifDartDuplicate[i][k]) {
+                if (dartHits[i][k]) {
                     score = score + (boardArea/areaOfPolygon(polygons, k, nVerticies[k]));
                 }
             }
         }
-    }else {
-        std::cout << "You have entered an invalid number of Darts.";
+    } else {
+        std::cout << "You have entered an invalid number of Darts." << std::endl;
         return 1;
         }
-        
+
     std::cout << "Score: " << score << std::endl;
     return 0;
 
