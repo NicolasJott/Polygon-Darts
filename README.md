@@ -63,6 +63,7 @@ Score: 200 / 3
 Output
 Score: 650 / 9
 
- *Note here that all three dart hit a polygon but dart (2/1,1/3) and (5/1,4/1) hit the same polygon therefore only dart (2/1,1/3) contributes to the score.
+ *Note here that all three dart hit a polygon but dart (2/1,1/3) and (5/1,4/1) 
+ hit the same polygon therefore only dart (2/1,1/3) contributes to the score.
  </pre>
 
