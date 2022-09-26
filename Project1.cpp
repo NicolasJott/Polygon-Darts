@@ -123,23 +123,26 @@ int main() {
     std::cin >> board;
     boardArea = board.getX() * board.getY();// Used to calculate the area of the dart board
     std::cin >> nPolygon;
-    if (nPolygon > 0 && nPolygon <= 100)
+    if (nPolygon > 0 && nPolygon <= 100) {
         for (int i = 0; i < nPolygon; i++) {
             std::cin >> nVerticies[i];
-            if (nVerticies[i] >= 3 && nVerticies[i] <= 20)
+            if (nVerticies[i] >= 3 && nVerticies[i] <= 20) {
                 for (int32_t k = 0; k < nVerticies[i]; k++) {
                     std::cin >> polygons[i][k];
                 }
-            else
-                std::cout << "You have entered an invalid number of Verticies.";
-            return 1;
-        }
-    else
-        std::cout << "You have entered an invalid number of Polygons.";
+           } else {
+                std::cout << "You have entered an invalid number of Verticies." << std::endl;
+            	 return 1;
+            	 }
+        } 
+    } else {
+        std::cout << "You have entered an invalid number of Polyogons." << std::endl;
         return 1;
+        }
+        
     // Number of darts thrown
     std::cin >> nDarts;
-    if (nDarts <= 10)
+    if (nDarts <= 10) {
         for (int32_t i = 0; i < nDarts; i++) {
             std::cin >> dart;
             for (int32_t k = 0; k < nPolygon; k++) {
@@ -161,10 +164,12 @@ int main() {
                 }
             }
         }
-        std::cout << "Score: " << score << std::endl;
-    else
+    }else {
         std::cout << "You have entered an invalid number of Darts.";
         return 1;
+        }
+        
+    std::cout << "Score: " << score << std::endl;
     return 0;
 
 }
