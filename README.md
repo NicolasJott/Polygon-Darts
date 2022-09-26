@@ -11,7 +11,7 @@ The polygon can only be hit once to contribute to the score. If the polygon is h
 6. The program checks to make sure that no two darts land in the same polygon, if they do, only the first dart throw will count towards the score.
 7. The score is then calculated by the area of the dartboard divided by the area of the polygon hit.
 
-# Example 1
+## Example 1
 <pre>
 Input
 (10/1,10/1)
@@ -23,8 +23,9 @@ Input
 
 Output
 Score: 50 / 9
-
-# Example 2
+</pre>
+## Example 2
+<pre>
 Input
 (10/1,10/1)
 2
@@ -35,8 +36,9 @@ Input
 
 Output
 Score: 0 / 1
-
-# Example 3
+</pre>
+## Example 3
+<pre>
 (10/1,10/1)
 2
 3 (0/1,0/1) (3/1,0/1) (2/1,1/1)
@@ -46,8 +48,9 @@ Score: 0 / 1
 
 Output
 Score: 200 / 3
-
-# Example 4
+</pre>
+## Example 4
+<pre>
 (10/1,10/1)
 2
 3 (0/1,0/1) (3/1,0/1) (2/1,1/1)
